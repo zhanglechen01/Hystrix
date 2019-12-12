@@ -1,0 +1,16 @@
+hystrix:
+  command:
+    default:  #default全局有效，service id指定应用有效
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000 #断路器超时时间，默认1000ms
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+  hystrix:
+    enabled: true
